@@ -30,6 +30,12 @@
   <link rel="preconnect" href="https://fonts.bunny.net">
   <link href="https://fonts.bunny.net/css?family=space-grotesk:400,500,600|inter:400,500,600" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- GLightbox CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+
+<!-- GLightbox JS -->
+<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+
   <style>
     html {
   scroll-behavior: smooth; /* native smooth scrolling */
@@ -225,9 +231,12 @@
             <div class="relative animate-[fadeIn_0.9s_ease-out_forwards] opacity-0" style="animation-delay:0.25s">
               <div class="relative rounded-3xl border border-zinc-800/70 bg-gradient-to-br from-zinc-900 via-black to-zinc-950 shadow-[0_0_60px_rgba(0,0,0,0.8)] overflow-hidden">
                 <!-- Actual hero image from Pexels -->
-                <div class="aspect-video sm:aspect-[4/3] relative overflow-hidden">
-                  <img src="assets/img/home2.jpg" alt="Luxury car detailing in studio" class="w-full h-full object-cover scale-105 transition-transform duration-700 ease-out group-hover:scale-110" loading="lazy">
-                  <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                <div class="aspect-video sm:aspect-[4/3] relative overflow-hidden carousel-images">
+     <img src="assets/img/home2.jpg" alt="Luxury car detailing" class="w-full h-full object-cover scale-105 transition-opacity duration-1000 ease-in-out opacity-100 absolute inset-0">
+<img src="assets/img/home3.jpg" alt="Luxury car detailing" class="w-full h-full object-cover scale-105 transition-opacity duration-1000 ease-in-out opacity-0 absolute inset-0">
+<img src="assets/img/home4.jpg" alt="Luxury car detailing" class="w-full h-full object-cover scale-105 transition-opacity duration-1000 ease-in-out opacity-0 absolute inset-0">
+
+      <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
 
                   <div class="absolute inset-x-4 sm:inset-x-8 bottom-4 sm:bottom-6 flex flex-col gap-3">
                     <div class="flex flex-wrap items-center justify-between gap-2">
@@ -260,26 +269,7 @@
                   </div>
                 </div>
 
-                <!-- Floating stat card -->
-              <!-- <div class="absolute -bottom-6 -right-4 sm:-bottom-8 sm:-right-6">
-                  <div class="rounded-2xl border border-zinc-800 bg-zinc-950/95 backdrop-blur shadow-2xl shadow-black/70 px-4 py-3 sm:px-5 sm:py-4 animate-[fadeUp_0.7s_ease-out_forwards] opacity-0" style="animation-delay:0.6s">
-                    <div class="flex items-center gap-3">
-                      <div class="h-8 w-8 rounded-full bg-gradient-to-br from-sky-500 to-fuchsia-400 flex items-center justify-center text-xs font-semibold text-zinc-950 tracking-tight">
-                        DD
-                      </div>
-                      <div class="space-y-0.5">
-                        <p class="text-xs sm:text-sm font-medium text-zinc-100 flex items-center gap-1.5">
-                       
-                          <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 text-sky-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M12 2.69l6.16 6.16A7.5 7.5 0 1 1 5.84 8.85z" stroke-linecap="round" stroke-linejoin="round"></path>
-                          </svg>
-                          100% hand washed
-                        </p>
-                        <p class="text-[0.7rem] sm:text-xs text-zinc-400">No tunnels. No brushes. No shortcuts.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>--> 
+               
               </div>
 
               <!-- Under-card stats -->
@@ -776,55 +766,61 @@ duration-300">
 
           <div class="grid md:grid-cols-3 gap-4">
             <!-- Card 1 -->
-            <div class="relative rounded-2xl border border-zinc-800/80 bg-zinc-950/80 overflow-hidden hover:-translate-y-1 hover:shadow-xl hover:shadow-black/60 duration-300">
-              <div class="aspect-video overflow-hidden">
-                <img src="assets/img/sample.jpg" alt="Corrected metallic paint" class="w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-105" loading="lazy">
-              </div>
-              <div class="p-4 space-y-1">
-                <p class="text-sm sm:text-base text-zinc-100 font-medium flex items-center gap-1.5">
-                  <!-- lucide: wand-2 -->
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 text-sky-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M15 4V2M15 16v-2M20 9h2M8 9H6M18.364 5.636L17.95 5.222M11.05 12.95l-.414-.414M18.364 12.364l-.414.414M11.05 5.636l-.414.414" stroke-linecap="round" stroke-linejoin="round"></path>
-                    <path d="M9 11l6-6" stroke-linecap="round" stroke-linejoin="round"></path>
-                  </svg>
-                  Multi-stage correction + coating
-                </p>
-                <p class="text-xs sm:text-sm text-zinc-400">Metallic paint restored from heavy swirling to mirror-like clarity.</p>
-              </div>
-            </div>
-            <!-- Card 2 -->
-            <div class="relative rounded-2xl border border-zinc-800/80 bg-zinc-950/80 overflow-hidden hover:-translate-y-1 hover:shadow-xl hover:shadow-black/60 duration-300">
-              <div class="aspect-video overflow-hidden">
-                <img src="assets/img/beforeafter.jpg" alt="Clean car interior" class="w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-105" loading="lazy">
-              </div>
-              <div class="p-4 space-y-1">
-                <p class="text-sm sm:text-base text-zinc-100 font-medium flex items-center gap-1.5">
-                  <!-- lucide: sofa-like -->
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 text-emerald-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M5 12a3 3 0 0 1 3-3h8a3 3 0 0 1 3 3v7H5z" stroke-linecap="round" stroke-linejoin="round"></path>
-                    <path d="M5 19H3v-6a2 2 0 0 1 2-2m14 8h2v-6a2 2 0 0 0-2-2" stroke-linecap="round" stroke-linejoin="round"></path>
-                  </svg>
-                  Interior deep clean &amp; reset
-                </p>
-                <p class="text-xs sm:text-sm text-zinc-400">Leather, textiles, and trims restored to a neutral, factory-like finish.</p>
-              </div>
-            </div>
-            <!-- Card 3 -->
-            <div class="relative rounded-2xl border border-zinc-800/80 bg-zinc-950/80 overflow-hidden hover:-translate-y-1 hover:shadow-xl hover:shadow-black/60 duration-300">
-              <div class="aspect-video overflow-hidden">
-                <img src="assets/img/carbon.jpg" alt="Daily driver with ceramic coating" class="w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-105" loading="lazy">
-              </div>
-              <div class="p-4 space-y-1">
-                <p class="text-sm sm:text-base text-zinc-100 font-medium flex items-center gap-1.5">
-                  <!-- lucide: droplet -->
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 text-sky-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M12 2.69l6.16 6.16A7.5 7.5 0 1 1 5.84 8.85z" stroke-linecap="round" stroke-linejoin="round"></path>
-                  </svg>
-                  Coated daily driver
-                </p>
-                <p class="text-xs sm:text-sm text-zinc-400">Hydrophobic protection makes maintenance washes fast and safe.</p>
-              </div>
-            </div>
+      <div class="relative rounded-2xl border border-zinc-800/80 bg-zinc-950/80 overflow-hidden hover:-translate-y-1 hover:shadow-xl hover:shadow-black/60 duration-300">
+        <a href="assets/img/sample.jpg" class="glightbox" data-gallery="gallery1" data-title="Multi-stage correction + coating">
+          <div class="aspect-video overflow-hidden">
+            <img src="assets/img/sample.jpg" alt="Corrected metallic paint" class="w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-105" loading="lazy">
+          </div>
+        </a>
+        <div class="p-4 space-y-1">
+          <p class="text-sm sm:text-base text-zinc-100 font-medium flex items-center gap-1.5">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 text-sky-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M15 4V2M15 16v-2M20 9h2M8 9H6M18.364 5.636L17.95 5.222M11.05 12.95l-.414-.414M18.364 12.364l-.414.414M11.05 5.636l-.414.414" stroke-linecap="round" stroke-linejoin="round"></path>
+              <path d="M9 11l6-6" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+            Multi-stage correction + coating
+          </p>
+          <p class="text-xs sm:text-sm text-zinc-400">Metallic paint restored from heavy swirling to mirror-like clarity.</p>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="relative rounded-2xl border border-zinc-800/80 bg-zinc-950/80 overflow-hidden hover:-translate-y-1 hover:shadow-xl hover:shadow-black/60 duration-300">
+        <a href="assets/img/beforeafter.jpg" class="glightbox" data-gallery="gallery1" data-title="Interior deep clean & reset">
+          <div class="aspect-video overflow-hidden">
+            <img src="assets/img/beforeafter.jpg" alt="Clean car interior" class="w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-105" loading="lazy">
+          </div>
+        </a>
+        <div class="p-4 space-y-1">
+          <p class="text-sm sm:text-base text-zinc-100 font-medium flex items-center gap-1.5">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 text-emerald-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M5 12a3 3 0 0 1 3-3h8a3 3 0 0 1 3 3v7H5z" stroke-linecap="round" stroke-linejoin="round"></path>
+              <path d="M5 19H3v-6a2 2 0 0 1 2-2m14 8h2v-6a2 2 0 0 0-2-2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+            Interior deep clean &amp; reset
+          </p>
+          <p class="text-xs sm:text-sm text-zinc-400">Leather, textiles, and trims restored to a neutral, factory-like finish.</p>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="relative rounded-2xl border border-zinc-800/80 bg-zinc-950/80 overflow-hidden hover:-translate-y-1 hover:shadow-xl hover:shadow-black/60 duration-300">
+        <a href="assets/img/carbon.jpg" class="glightbox" data-gallery="gallery1" data-title="Coated daily driver">
+          <div class="aspect-video overflow-hidden">
+            <img src="assets/img/carbon.jpg" alt="Daily driver with ceramic coating" class="w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-105" loading="lazy">
+          </div>
+        </a>
+        <div class="p-4 space-y-1">
+          <p class="text-sm sm:text-base text-zinc-100 font-medium flex items-center gap-1.5">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 text-sky-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 2.69l6.16 6.16A7.5 7.5 0 1 1 5.84 8.85z" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+            Coated daily driver
+          </p>
+          <p class="text-xs sm:text-sm text-zinc-400">Hydrophobic protection makes maintenance washes fast and safe.</p>
+        </div>
+      </div>
+      
           </div>
         </div>
       </section>
@@ -1259,6 +1255,30 @@ duration-300">
       100% { transform: translateX(0); }
     }
   </style>
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const carousel = document.querySelectorAll(".carousel-images img");
+  let current = 0;
+  const total = carousel.length;
+
+  function showNextImage() {
+    // Hide current
+    carousel[current].classList.remove("opacity-100");
+    carousel[current].classList.add("opacity-0");
+
+    // Next index
+    current = (current + 1) % total;
+
+    // Show next
+    carousel[current].classList.remove("opacity-0");
+    carousel[current].classList.add("opacity-100");
+  }
+
+  // Change image every 5 seconds
+  setInterval(showNextImage, 5000);
+});
+</script>
+
 <script>
   const mobileMenu = document.getElementById("mobileMenu");
   const openBtn = document.querySelector("button.md\\:hidden"); 
@@ -1293,6 +1313,14 @@ duration-300">
   });
 </script>
 
+<script>
+  const lightbox = GLightbox({
+    selector: '.glightbox',
+    touchNavigation: true,
+    loop: true,
+    zoomable: true,
+  });
+</script>
 
 
 </body></html>
